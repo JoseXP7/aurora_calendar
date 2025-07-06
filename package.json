@@ -1,0 +1,35 @@
+{
+  "name": "aurora_calendar",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "@tailwindcss/vite": "^4.1.10",
+    "@tanstack/vue-table": "^8.21.3",
+    "@vueuse/core": "^13.4.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.516.0",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.3.0",
+    "reka-ui": "^2.3.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.10",
+    "tw-animate-css": "^1.3.4",
+    "vue": "^3.5.13",
+    "vue-cal": "^5.0.1-rc.25",
+    "vue-router": "^4.5.0",
+    "vue-sonner": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.2.4",
+    "vite-plugin-vue-devtools": "^7.7.2"
+  }
+}
