@@ -72,7 +72,7 @@ const mobileMenuOpen = ref(false)
       <div class="relative ml-auto w-full max-w-xs bg-white p-6">
         <div class="flex items-center justify-between">
           <RouterLink to="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
+            <span class="sr-only">Fundación Tejiendo Redes</span>
             <img
               class="h-8 w-auto"
               src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
@@ -84,7 +84,7 @@ const mobileMenuOpen = ref(false)
             class="-m-2.5 rounded-md p-2.5 text-gray-700"
             @click="mobileMenuOpen = false"
           >
-            <span class="sr-only">Close menu</span>
+            <span class="sr-only">Cerrar</span>
             <X class="size-6" aria-hidden="true" />
           </button>
         </div>
