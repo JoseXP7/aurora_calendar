@@ -20,6 +20,7 @@ import {
 
 const router = useRouter()
 const { supabase } = useSupabase()
+const userStore = useUserStore()
 
 const loading = ref(false)
 
