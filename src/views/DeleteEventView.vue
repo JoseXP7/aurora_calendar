@@ -22,6 +22,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { toast } from 'vue-sonner'
 
 const { supabase } = useSupabase()
@@ -221,8 +227,28 @@ onMounted(() => {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Button variant="outline" @click="selectAll"><ListPlus /></Button>
-      <Button variant="outline" @click="deselectAll"><ListRestart /></Button>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger
+            ><Button variant="outline" @click="selectAll"><ListPlus /></Button
+          ></TooltipTrigger>
+          <TooltipContent>
+            <p>Seleccionar todos</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger
+            ><Button variant="outline" @click="deselectAll"
+              ><ListRestart /></Button
+          ></TooltipTrigger>
+          <TooltipContent>
+            <p>Deseleccionar todos</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
       <Button
         variant="destructive"
         :disabled="selectedIds.length < 2"
