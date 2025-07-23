@@ -8,6 +8,7 @@ import {
   Calendar,
   CalendarPlus,
   CalendarSync,
+  CalendarMinus,
   Home,
   Inbox,
   Users,
@@ -67,6 +68,12 @@ const items = [
     title: 'Modificar evento',
     url: '/modify-event',
     icon: CalendarSync,
+    onlyDirector: true,
+  },
+  {
+    title: 'Eliminar evento',
+    url: '/delete-event',
+    icon: CalendarMinus,
     onlyDirector: true,
   },
   {

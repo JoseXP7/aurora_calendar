@@ -175,6 +175,16 @@ const router = createRouter({
       beforeEnter: isDirector,
     },
     {
+      path: '/delete-event',
+      name: 'delete-event',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/DeleteEventView.vue'),
+      meta: { showSidebar: true },
+      beforeEnter: isDirector,
+    },
+    {
       path: '/calendar',
       name: 'calendar',
       // route level code-splitting
