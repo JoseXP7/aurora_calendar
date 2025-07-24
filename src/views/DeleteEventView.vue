@@ -213,7 +213,7 @@ onMounted(() => {
         Aquí puedes eliminar los eventos existentes.
       </p>
     </div>
-    <div class="m-5 flex flex-col md:flex-row gap-2 md:items-center">
+    <div class="m-5 flex md:flex-row gap-2 md:items-center">
       <h1 class="text-sm">Filtro</h1>
       <Select v-model="statusFilter" class="w-full md:w-56">
         <SelectTrigger>
@@ -257,7 +257,7 @@ onMounted(() => {
       /></Button>
     </div>
     <div class="m-5">
-      <Table :items="solicitudes" :columns="columns" :page-size="5">
+      <Table :items="solicitudes" :columns="columns" :page-size="10">
         <template #cell-Select="{ item }">
           <Label class="cursor-pointer">
             <input

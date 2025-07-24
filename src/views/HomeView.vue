@@ -29,12 +29,8 @@ const mobileMenuOpen = ref(false)
       >
         <div class="flex lg:flex-1">
           <RouterLink to="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <span class="sr-only">Fundación Tejiendo Redes</span>
+            <img class="h-8 w-auto" src="../assets/aurora_logo.svg" alt="" />
           </RouterLink>
         </div>
         <div class="flex lg:hidden">
@@ -73,11 +69,7 @@ const mobileMenuOpen = ref(false)
         <div class="flex items-center justify-between">
           <RouterLink to="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Fundación Tejiendo Redes</span>
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <img class="h-8 w-auto" src="../assets/aurora_logo.svg" alt="" />
           </RouterLink>
           <button
             type="button"
@@ -112,7 +104,22 @@ const mobileMenuOpen = ref(false)
     </div>
 
     <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+      >
+        <div class="relative w-[28rem] h-[28rem]">
+          <div
+            class="absolute top-0 -left-4 w-72 h-72 bg-[#5158D2] rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"
+          ></div>
+          <div
+            class="absolute top-0 -right-4 w-72 h-72 bg-[#72B6F2] rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"
+          ></div>
+          <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-[#5344DA] rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"
+          ></div>
+        </div>
+      </div>
+      <div class="relative z-10 mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"

@@ -154,7 +154,7 @@ onMounted(() => {
       </Select>
     </div>
     <div class="m-5">
-      <Table :items="solicitudes" :columns="columns" :page-size="5">
+      <Table :items="solicitudes" :columns="columns" :page-size="10">
         <template #cell-id="{ value, item }">
           <Button @click="openDialog(item)">
             {{ value }}

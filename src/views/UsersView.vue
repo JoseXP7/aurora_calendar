@@ -277,7 +277,7 @@ onMounted(() => {
               <SelectContent>
                 <SelectGroup>
                   <SelectItem :value="1">Staff</SelectItem>
-                  <SelectItem :value="2">Centro de Estudiantes</SelectItem>
+                  <!-- <SelectItem :value="2">Centro de Estudiantes</SelectItem> -->
                   <SelectItem :value="3">Director</SelectItem>
                 </SelectGroup>
               </SelectContent>

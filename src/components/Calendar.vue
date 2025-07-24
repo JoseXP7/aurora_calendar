@@ -22,7 +22,7 @@ const props = defineProps({
 
 <style>
 .vuecal {
-  --vuecal-primary-color: #6c6db2;
+  --vuecal-primary-color: #204a8d;
   .vuecal__scrollable--month-view {
     .vuecal__event {
       height: 15px;
