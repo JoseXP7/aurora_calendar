@@ -41,9 +41,9 @@ export function useAuth() {
 
   const resetPassword = async (email) => {
     // Usa la URL de producción si está en producción, si no usa localhost
-    const redirectTo = import.meta.env.VITE_REDIRECT_URL
-      ? 'https://auroracalendar.netlify.app/reset-password'
-      : 'http://localhost:3000/reset-password'
+    const redirectTo =
+      import.meta.env.VITE_REDIRECT_URL ||
+      'http://localhost:3000/reset-password'
 
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo,
