@@ -164,7 +164,20 @@ const updateProfile = async () => {
                   <SelectItem value="CEDCV"> DCV </SelectItem>
                   <SelectItem value="CEDCS"> DCS </SelectItem>
                   <SelectItem value="CEDEHA"> DEHA </SelectItem>
-                  <SelectItem value="CEDEHA"> DCEE </SelectItem>
+                  <SelectItem value="CEDCEE"> DCEE </SelectItem>
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Estudiantes Asesores</SelectLabel>
+                  <SelectItem value="GEO"> GEO </SelectItem>
+                  <SelectItem value="APOYO"> APOYO </SelectItem>
+                  <SelectItem value="GREMIAM"> GREMIAM </SelectItem>
+                  <SelectItem value="ARCADE"> ARCADE </SelectItem>
+                  <SelectItem value="IDEA"> IDEA </SelectItem>
+                  <SelectItem value="MOUSE"> MOUSE </SelectItem>
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Grupos Organizados</SelectLabel>
+                  <SelectItem value="RAEE"> RAEE </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

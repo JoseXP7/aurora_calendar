@@ -7,6 +7,16 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from 'vue-sonner'
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from '@/components/ui/dialog'
 
 const router = useRouter()
 
@@ -14,7 +24,10 @@ const loading = ref(false)
 const email = ref('')
 const password = ref('')
 
-const { loginWithPassw } = useAuth()
+const showReset = ref(false)
+const resetEmail = ref('')
+
+const { loginWithPassw, resetPassword } = useAuth()
 
 const login = async () => {
   loading.value = true
@@ -34,6 +47,36 @@ const login = async () => {
         border: 'none',
       },
     })
+  } catch (error) {
+    toast.error(error.message, {
+      position: 'bottom-right',
+      duration: 5000,
+      style: {
+        backgroundColor: '#EF4444',
+        color: '#fff',
+        border: 'none',
+      },
+    })
+  } finally {
+    loading.value = false
+  }
+}
+
+const handleReset = async () => {
+  loading.value = true
+  try {
+    await resetPassword(resetEmail.value)
+    toast.success('Correo de recuperación enviado.', {
+      position: 'bottom-right',
+      duration: 5000,
+      style: {
+        backgroundColor: '#4ade80',
+        color: '#fff',
+        border: 'none',
+      },
+    })
+    showReset.value = false
+    resetEmail.value = ''
   } catch (error) {
     toast.error(error.message, {
       position: 'bottom-right',
@@ -78,12 +121,43 @@ const login = async () => {
           <div class="grid gap-2">
             <div class="flex items-center">
               <Label for="password">Contraseña</Label>
-              <a
-                href="/"
-                class="ml-auto inline-block text-sm underline text-primary"
-              >
-                Olvidaste tu contraseña?
-              </a>
+              <Dialog v-model:open="showReset">
+                <DialogTrigger as-child>
+                  <a
+                    href="#"
+                    class="ml-auto inline-block text-sm underline text-primary"
+                    @click.prevent="showReset = true"
+                  >
+                    Olvidaste tu contraseña?
+                  </a>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Recuperar contraseña</DialogTitle>
+                    <DialogDescription>
+                      Ingresa tu correo y te enviaremos un enlace para
+                      restablecer tu contraseña.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div class="py-2">
+                    <Input v-model="resetEmail" placeholder="m@example.com" />
+                  </div>
+                  <Button
+                    @click="handleReset"
+                    class="w-full"
+                    :disabled="loading"
+                  >
+                    {{ loading ? 'Enviando...' : 'Enviar' }}
+                  </Button>
+                  <DialogFooter>
+                    <DialogClose as-child>
+                      <Button variant="outline" class="w-full mt-2"
+                        >Cancelar</Button
+                      >
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
             <Input id="password" type="password" v-model="password" />
           </div>

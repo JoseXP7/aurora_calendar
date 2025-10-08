@@ -115,6 +115,15 @@ const router = createRouter({
       beforeEnter: isLoginAuth,
     },
     {
+      path: '/reset-password',
+      name: 'reset-password',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ResetPasswordView.vue'),
+      meta: { showSidebar: false },
+    },
+    {
       path: '/register',
       name: 'register',
       // route level code-splitting
